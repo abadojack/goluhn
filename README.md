@@ -1,5 +1,8 @@
 # goluhn
 
+[![Build Status](https://travis-ci.org/abadojack/goluhn.svg?branch=master)](https://travis-ci.org/abadojack/goluhn) [![GoDoc](https://godoc.org/github.com/abado    jack/goluhn?status.png)](http://godoc.org/github.com/abadojack/goluhn)
+
+
 Validates credit card numbers using Luhn's algorithm and regular expressions.
 
 ### Installation
