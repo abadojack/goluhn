@@ -16,7 +16,7 @@ func IsValid(cardNumStr string) bool {
 
 	numLen := len(cardNumStr)
 	sum := 0
-	for i := 0; i <= numLen; i++ {
+	for i := 0; i < numLen; i++ {
 		digit := cardNum % 10
 		cardNum /= 10
 		if i%2 == 0 {
@@ -29,8 +29,7 @@ func IsValid(cardNumStr string) bool {
 		sum += digit
 	}
 
-	sum += (sum * 9) % 10
-
+	sum += cardNum % 10
 	return sum%10 == 0
 }
 
