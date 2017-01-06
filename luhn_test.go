@@ -35,13 +35,33 @@ func Test_IsValid(t *testing.T) {
 func Test_CardType(t *testing.T) {
 	tests := map[string]string{
 		//unionpay
+		"6219739442481773": "unionpay",
+		"6224442539740077": "unionpay",
+		"6216926755108597": "unionpay",
+		"6236251794223075": "unionpay",
+		"6214821847503719": "unionpay",
+		"6230067318103437": "unionpay",
+		"6251066987735341": "unionpay",
+		"6205045002411622": "unionpay",
+		"6206157224102944": "unionpay",
+		"6238643689781290": "unionpay",
+		"6282788945169270": "unionpay",
+		"6221959593272963": "unionpay",
+
 		//dankort
 		"5019717010103742": "dankort",
+
 		//electron
-		//"4245190000000311":"electron",
+		"4175000782868237":"electron",
+		"4913028120354021":"electron",
+		"4026689412616783":"electron",
+
 		//maestro
 		"6759649826438453": "maestro",
-		//"6799990100000000019":"maestro",
+		"6304753092723687": "maestro",
+		"6762945309287507": "maestro",
+		"0604086364346931": "maestro",
+
 		//jcb
 		"3530111333300000": "jcb",
 		"3566002020360505": "jcb",
@@ -50,6 +70,8 @@ func Test_CardType(t *testing.T) {
 		"3557355638346998": "jcb",
 
 		//interpayment
+		"6360000000000001":"interpayment",
+		
 		//visa
 		"4111111111111111": "visa",
 		"4012888888881881": "visa",
@@ -96,6 +118,14 @@ func Test_CardType(t *testing.T) {
 		"376485316211225": "amex",
 		"346068046967428": "amex",
 		"372725584902193": "amex",
+
+		//diners
+		"36832017491758":"diners",
+		"36670560251199":"diners",
+		"36174229895397":"diners",
+		"30145891459510":"diners",
+		"30278344499740":"diners",
+		"30474492849022":"diners",
 	}
 	for key, want := range tests {
 		got := CardType(key)

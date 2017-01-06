@@ -5,13 +5,13 @@
 
 Validates credit card numbers using Luhn's algorithm and regular expressions.
 
-### Installation
+## Installation
 
 ```sh
 go get -u github.com/abadojack/goluhn
 ```
 
-### Usage
+## Usage
 ```go
 import "github.com/abadojack/goluhn"
 ```
@@ -19,12 +19,24 @@ import "github.com/abadojack/goluhn"
 ### Validate credit/debit card number
 
 ```go
-goluhn.IsValid("5500005555555559")	//returns true
+goluhn.IsValid("4024007146787212")	//returns true
 ```
 
 ### Validate credit/debit card number and return type
 
 ```go
-goluhn.CardType("5500005555555559")	//returns mastercard
+goluhn.CardType("4024007146787212")	//returns visa
 ```
 
+
+## Credit cards supported
+* (Visa) Electron
+* Amex
+* Dankort
+* Diners
+* Discover
+* JCB
+* Interpayment
+* Maestro
+* Unionpay
+* Visa 
