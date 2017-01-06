@@ -8,7 +8,7 @@ import (
 
 //IsValid returns true if cardNumber is a valid credit card number or false otherwise.
 func IsValid(cardNumStr string) bool {
-	cardNumStr = reverse(strings.TrimSpace(cardNumStr))
+	cardNumStr = strings.TrimSpace(cardNumStr)
 	cardNum, err := strconv.Atoi(cardNumStr)
 	if err != nil {
 		return false
@@ -16,7 +16,9 @@ func IsValid(cardNumStr string) bool {
 
 	numLen := len(cardNumStr)
 	sum := 0
-	for i := 0; i < numLen; i++ {
+	checkDigit := cardNum % 10
+	cardNum /= 10
+	for i := 0; i < numLen-1; i++ {
 		digit := cardNum % 10
 		cardNum /= 10
 		if i%2 == 0 {
@@ -28,8 +30,7 @@ func IsValid(cardNumStr string) bool {
 
 		sum += digit
 	}
-
-	sum += cardNum % 10
+	sum += checkDigit
 	return sum%10 == 0
 }
 
